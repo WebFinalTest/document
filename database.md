@@ -44,11 +44,6 @@ CREATE TABLE `bbsforum`.`post`  (
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `bbsforum`.`user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 ```
-* 插入外键：
-```
-ALTER TABLE `bbsforum`.`post` 
-ADD CONSTRAINT `post_ibfk_2` FOREIGN KEY (`adoptCommentId`) REFERENCES `bbsforum`.`comment` (`commentId`) ON DELETE CASCADE ON UPDATE CASCADE;
-```
 * 建立comment表：
 ```
 CREATE TABLE `bbsforum`.`comment`  (
@@ -69,6 +64,11 @@ CREATE TABLE `bbsforum`.`comment`  (
   CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`postId`) REFERENCES `bbsforum`.`post` (`postId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `comment_ibfk_4` FOREIGN KEY (`userId`) REFERENCES `bbsforum`.`user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+```
+* 插入外键：
+```
+ALTER TABLE `bbsforum`.`post` 
+ADD CONSTRAINT `post_ibfk_2` FOREIGN KEY (`adoptCommentId`) REFERENCES `bbsforum`.`comment` (`commentId`) ON DELETE CASCADE ON UPDATE CASCADE;
 ```
 * 建立like表：
 ```
