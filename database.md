@@ -41,8 +41,7 @@ CREATE TABLE `bbsforum`.`post`  (
   PRIMARY KEY (`postId`) USING BTREE,
   INDEX `post_ibfk_1`(`userId`) USING BTREE,
   INDEX `commentId`(`adoptCommentId`) USING BTREE,
-  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `bbsforum`.`user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `post_ibfk_2` FOREIGN KEY (`adoptCommentId`) REFERENCES `bbsforum`.`comment` (`commentId`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `bbsforum`.`user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 ```
 * 插入外键：
