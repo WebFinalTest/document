@@ -68,7 +68,7 @@ CREATE TABLE `bbsforum`.`comment`  (
 * 插入外键：
 ```
 ALTER TABLE `bbsforum`.`post` 
-ADD CONSTRAINT `post_ibfk_2` FOREIGN KEY (`adoptCommentId`) REFERENCES `bbsforum`.`comment` (`commentId`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `post_ibfk_2` FOREIGN KEY (`adoptCommentId`) REFERENCES `bbsforum`.`comment` (`commentId`) ON DELETE SET NULL ON UPDATE CASCADE;
 ```
 * 建立like表：
 ```
