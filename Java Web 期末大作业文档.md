@@ -94,6 +94,8 @@
 
 **外键：用户Id
 
+* id长度：userId: 9，postId:10，commentId:12，favaritesid:11
+
 
 # 二、接口文档
 
