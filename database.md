@@ -108,6 +108,6 @@ CREATE TABLE `bbsforum`.`collect`  (
   INDEX `favoritesId`(`favoritesId`) USING BTREE,
   CONSTRAINT `collect_ibfk_1` FOREIGN KEY (`postId`) REFERENCES `bbsforum`.`post` (`postId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `collect_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `bbsforum`.`user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `collect_ibfk_3` FOREIGN KEY (`favoritesId`) REFERENCES `bbsforum`.`favorites` (`favoritesId`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `collect_ibfk_3` FOREIGN KEY (`favoritesId`) REFERENCES `bbsforum`.`favorites` (`favoritesId`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 ```
