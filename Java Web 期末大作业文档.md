@@ -77,12 +77,23 @@
 | -------- | -------- | ------ |
 | 帖子Id   | Long     |        |
 | 用户Id   | Long     |        |
-
 | 收藏时间 | 时间     | 不为空 |
+| 收藏夹Id | Long     | 不为空 |
+**主键：**帖子Id，用户Id，收藏夹Id
 
-**主键：**帖子Id，用户Id
+**外键：**帖子Id，用户Id，收藏夹Id
 
-**键：**收藏Id
+## 收藏夹表
+
+| 意义     | 数据类型 | 备注   |
+| -------- | -------- | ------ |
+| 收藏夹Id   | Long     |        |
+| 用户Id   | Long     |        |
+| 收藏夹名字 | Long     | 不为空 |
+**主键：**收藏夹Id
+
+**外键：用户Id
+
 
 # 二、接口文档
 
@@ -145,10 +156,10 @@
 ### 收藏
 
 1. 创建收藏```bool createCollect(Collect collect)```
-2. 查看收藏过的帖子```List<Collect> findPostCollects(Long userId)```
-3. 查看帖子收藏数```Long countPostCollect(Long postId);```
-4. 查看帖子是否收藏过```bool isPostCollect(Long postId);```
-5. 查看收藏过的评论```List<Collect> findCommentCollects(Long userId);```
-6. 查看评论收藏数```Long countCommentCollect(Long collectId);```
-7. 查看评论是否收藏过```bool isCommentCollect(Long collectId);```
-8. 删除收藏```bool deleteCollect(Long collectId);```
+2. 创建收藏夹```bool createFavorites(Favorites favorites)```
+3. 查看我的收藏夹```List<Favorites> findFavoritesById(Long userId)```
+4. 查看收藏过的帖子```List<Collect> findPostCollects(Long FavoritesId)```
+5. 删除收藏```bool deleteCollect(Long collectId);```
+6. 删除收藏夹（只限空收藏夹，提前判断）```bool deleteFavorites(Long favoritesId);```
+7. 修改收藏夹```bool updateFavorites(Long favoritesId);```
+8. 修改收藏```bool updateCollect(Long collectId);```
