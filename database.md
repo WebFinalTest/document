@@ -38,6 +38,8 @@ CREATE TABLE `bbsforum`.`post`  (
   `postType` tinyint(3) NOT NULL,
   `postPoints` bigint(20) NULL DEFAULT NULL,
   `adoptCommentId` bigint(20) NULL DEFAULT NULL,
+  `likes` bigint(20) NOT NULL DEFAULT 0,
+  `collects` bigint(20) NOT NULL DEFAULT 0,
   PRIMARY KEY (`postId`) USING BTREE,
   INDEX `post_ibfk_1`(`userId`) USING BTREE,
   INDEX `commentId`(`adoptCommentId`) USING BTREE,
@@ -47,13 +49,14 @@ CREATE TABLE `bbsforum`.`post`  (
 * 建立comment表：
 ```
 CREATE TABLE `bbsforum`.`comment`  (
-  `commentId` bigint(20) NOT NULL,
+   `commentId` bigint(20) NOT NULL,
   `postId` bigint(20) NOT NULL,
   `userId` bigint(20) NOT NULL,
   `commentContent` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `replyId` bigint(20) NULL DEFAULT NULL,
   `floorId` bigint(20) NULL DEFAULT NULL,
-  `creatDate` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createDate` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `likes` bigint(20) NOT NULL DEFAULT 0,
   PRIMARY KEY (`commentId`) USING BTREE,
   INDEX `postId`(`postId`) USING BTREE,
   INDEX `comment_ibfk_1`(`replyId`) USING BTREE,
