@@ -111,3 +111,4 @@ CREATE TABLE `bbsforum`.`collect`  (
   CONSTRAINT `collect_ibfk_3` FOREIGN KEY (`favoritesId`) REFERENCES `bbsforum`.`favorites` (`favoritesId`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 ```
+
