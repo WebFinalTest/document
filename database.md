@@ -103,7 +103,7 @@ CREATE TABLE `bbsforum`.`collect`  (
   `userId` bigint(20) NOT NULL,
   `collectDate` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `favoritesId` bigint(20) NOT NULL,
-  PRIMARY KEY (`postId`, `userId`) USING BTREE,
+  PRIMARY KEY (`postId`, `userId`, `favoritesId`) USING BTREE,
   INDEX `userId`(`userId`) USING BTREE,
   INDEX `favoritesId`(`favoritesId`) USING BTREE,
   CONSTRAINT `collect_ibfk_1` FOREIGN KEY (`postId`) REFERENCES `bbsforum`.`post` (`postId`) ON DELETE CASCADE ON UPDATE CASCADE,
