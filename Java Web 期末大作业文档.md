@@ -142,8 +142,8 @@
 7. 查找所有帖子```List<Post> findPosts();```  
 8. 查找单个帖子```Post findPostByPostId(Long postId);```  
 9. 采纳评论```bool finishPost(Long postId, Long commentId);```  
-10.取消加精```public void unQualityPost(Long postId);```    
-11.取消置顶```public void unTopPost(Long postId);```  
+10.取消加精```public void unQualityPost(Long postId);```  
+11.取消置顶```public void unTopPost(Long postId);``` 
 12.采纳评论```public void adoptComment(Long postId, Long commentId);```    
 13.修改标题```public void updatePostTitle(Long postId, String postTitle);```  
 14.修改帖子内容```public void updatePostContent(Long postId, String postContent);```  
