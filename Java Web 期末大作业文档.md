@@ -122,6 +122,8 @@
 3. 用户登录```bool login(String email, String  pwd);```
 4. 查找用户昵称是否被使用```bool isUsedByName(String name);```
 5. 查找邮箱是否被使用```bool isUsedByEmail(String email);```
+6. 返回所有用户```public List<User> findAll();```
+7. 按照id查询user```public User findByUserId(Long userId);```
 
 #### 管理员
 
