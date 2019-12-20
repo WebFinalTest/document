@@ -136,24 +136,24 @@
 1. 创建帖子```bool createPost(Post post);```
 2. 加精帖子```bool qualityPost(Long postId);```
 3. 置顶帖子```bool topPost(Long postId);```
-4. 取消置顶```bool untopPost(Long postId);```
+4. 取消置顶```bool untopPost(Long postId);```  
 5. 删除帖子```bool deletePost(Post post);```
 6. 修改帖子```bool updatePost(Post post);```
 7. 查找所有帖子```List<Post> findPosts();```  
 8. 查找单个帖子```Post findPostByPostId(Long postId);```  
 9. 采纳评论```bool finishPost(Long postId, Long commentId);```  
-10.取消加精```public void unQualityPost(Long postId);```  
-11.取消置顶```public void unTopPost(Long postId);``` 
-12.采纳评论```public void adoptComment(Long postId, Long commentId);```    
-13.修改标题```public void updatePostTitle(Long postId, String postTitle);```  
-14.修改帖子内容```public void updatePostContent(Long postId, String postContent);```  
-15.查找所有帖子```public List<Post> findPosts();```  
-16.分页查找帖子```public List<Post> findPostsByPage(Long page);```  
-17.查找某个用户的所有帖子```public List<Post> findPostsByUserId(Long userId);```  
-18.查找某个用户某页的所有帖子```public List<Post> findPostsByPageUserId(Long userId, Long page);```  
-19.查找某个帖子```public Post findPostByPostId(Long postId);```  
-20.计算所有帖子页数```public Long countPostsPage();```  
-21.计算某个用户所有帖子页数```public Long countPostsPageByUserId(Long userId);```  
+10. 取消加精```public void unQualityPost(Long postId);```  
+11. 取消置顶```public void unTopPost(Long postId);```  
+12. 采纳评论```public void adoptComment(Long postId, Long commentId);```  
+13. 修改标题```public void updatePostTitle(Long postId, String postTitle);```  
+14. 修改帖子内容```public void updatePostContent(Long postId, String postContent);```  
+15. 查找所有帖子```public List<Post> findPosts();```  
+16. 分页查找帖子```public List<Post> findPostsByPage(Long page);```  
+17. 查找某个用户的所有帖子```public List<Post> findPostsByUserId(Long userId);```  
+18. 查找某个用户某页的所有帖子```public List<Post> findPostsByPageUserId(Long userId, Long page);```  
+19. 查找某个帖子```public Post findPostByPostId(Long postId);```  
+20. 计算所有帖子页数```public Long countPostsPage();```  
+21. 计算某个用户所有帖子页数```public Long countPostsPageByUserId(Long userId);```  
 
 ### 评论
 
@@ -161,6 +161,11 @@
 2. 删除评论```bool deleteComment(Long commentId);```
 3. 查找所有评论```List<Comment> findCommentsByPostId(Long postId);```
 4. 用户查找评论```List<Comment> findCommentsByUserId(Long userId);```
+5. 返回一个帖子的某页的评论```public List<Comment> findByPostId(Long postId,Long page);```
+6. 返回一个层级某页的评论```public List<Comment> findByFloorId(Long floorId,Long page);```
+7. 返回一个层级评论页数```public Long countCommentPagesByFloorId(Long floorId);```
+8. 返回一个用户某页的评论```public List<Comment> findByUserId(Long userId,Long page);```
+9. 返回一个用户评论页数```public Long countCommentPagesByUserId(Long userId);```
 
 ### 点赞
 
@@ -172,6 +177,8 @@
 6. 查看评论点赞数```Long countCommentLike(Long commentId);```
 7. 查看评论是否点赞过```bool isCommentLike(Long commentId);```
 8. 删除点赞```bool deleteLike(Long likeId);```
+9. 返回一个帖子评论页数```public Long countCommentPagesByPostId(Long postId);```
+
 
 ### 收藏
 
