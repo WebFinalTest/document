@@ -194,16 +194,16 @@
 8. 修改收藏```bool updateCollect(Long collectId);```
 
 
-##表现层
+## 表现层
 
-###用户
+### 用户
 1. 修改用户信息```public Map doUpdateUserInfo(HttpSession session,User user)```
 2. 修改用户密码``` public Map<String,String> updatePassword(HttpSession session,String originalPassword,String newPassword)```
 3. 检查用户名是否被使用```public Map checkUserName(String userName,HttpSession session)```
 4. 登录```public Map doLogin(User user, HttpSession session)```
 5. 注册```public Map doRegister```
 
-###帖子
+### 帖子
 1. 根据页码查看帖子```public List<Post> viewByPage(@PathVariable("page") Long page)```
 2. 创建帖子```public Map<String,String> create(Post post, HttpSession session)```
 3. 删除帖子```public Map deleteByPostId(Long postId)```
@@ -215,11 +215,11 @@
 9. 查看我创建的帖子```public String showMyPosts(HttpSession session,Model model)```
 10. 采纳评论（给予积分）```public Map adoptPost(Long postId,Long commentId)```
 
-###点赞
+### 点赞
 1. 给帖子点赞```public Map likePost(HttpSession session,Long postId) ```
 2. 给评论点赞```public Map likeComment(HttpSession session, Long commentId)```
 
-###收藏
+### 收藏
 1. 创建新的收藏夹```public Map createFavorites(HttpSession session,String favoritesName)```
 2. 查看我的收藏夹```public List<Favorites> viewFavorites(HttpSession session)```
 3. 修改收藏夹```public Map renameFavorites(Favorites favorites)```
@@ -229,6 +229,6 @@
 7. 查看一个收藏夹的全部收藏```public String viewCollect(Long favoritesId, Model model)```
 8. 删除一个收藏```public Map deleteCollect(HttpSession session,Long postId)```
 
-###评论
+### 评论
 1. 创建评论```public Map createComment (HttpSession session,Comment comment)```
 2. 查看层级评论```public String goFloorComments(@PathVariable("floorId") Long floorId,Model model)```
